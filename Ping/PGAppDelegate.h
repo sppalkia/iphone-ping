@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class PGViewController;
 @interface PGAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) PGViewController *viewController;
 
 @end
