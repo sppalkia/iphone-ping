@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21ED4F118ADAA6300121B2C /* PGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B21ED4F018ADAA6300121B2C /* PGConstants.m */; };
 		B2D010B018AC8520000AACBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D010AF18AC8520000AACBB /* Foundation.framework */; };
 		B2D010B218AC8520000AACBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D010B118AC8520000AACBB /* CoreGraphics.framework */; };
 		B2D010B418AC8520000AACBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D010B318AC8520000AACBB /* UIKit.framework */; };
@@ -24,6 +25,7 @@
 		B2D010E518AC86DA000AACBB /* PGNetworkUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D010E418AC86DA000AACBB /* PGNetworkUtility.m */; };
 		B2D010E818AC91DE000AACBB /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D010E718AC91DE000AACBB /* SimplePing.m */; };
 		B2D010EA18AC9AE0000AACBB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D010E918AC9AE0000AACBB /* QuartzCore.framework */; };
+		B2FC536D18ACA77C00E91F2A /* PGPulseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FC536C18ACA77C00E91F2A /* PGPulseView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B21ED4EF18ADAA6300121B2C /* PGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGConstants.h; sourceTree = "<group>"; };
+		B21ED4F018ADAA6300121B2C /* PGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGConstants.m; sourceTree = "<group>"; };
 		B2D010AC18AC8520000AACBB /* Ping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D010AF18AC8520000AACBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2D010B118AC8520000AACBB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,6 +65,8 @@
 		B2D010E618AC91DE000AACBB /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
 		B2D010E718AC91DE000AACBB /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
 		B2D010E918AC9AE0000AACBB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B2FC536B18ACA77C00E91F2A /* PGPulseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGPulseView.h; sourceTree = "<group>"; };
+		B2FC536C18ACA77C00E91F2A /* PGPulseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGPulseView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +128,10 @@
 		B2D010B518AC8520000AACBB /* Ping */ = {
 			isa = PBXGroup;
 			children = (
-				B2D010BE18AC8520000AACBB /* PGAppDelegate.h */,
-				B2D010BF18AC8520000AACBB /* PGAppDelegate.m */,
 				B2D010C118AC8520000AACBB /* Images.xcassets */,
 				B2D010B618AC8520000AACBB /* Supporting Files */,
+				B2D010BE18AC8520000AACBB /* PGAppDelegate.h */,
+				B2D010BF18AC8520000AACBB /* PGAppDelegate.m */,
 				B2D010DE18AC8530000AACBB /* PGViewController.h */,
 				B2D010DF18AC8530000AACBB /* PGViewController.m */,
 				B2D010E018AC8530000AACBB /* PGViewController.xib */,
@@ -133,6 +139,10 @@
 				B2D010E418AC86DA000AACBB /* PGNetworkUtility.m */,
 				B2D010E618AC91DE000AACBB /* SimplePing.h */,
 				B2D010E718AC91DE000AACBB /* SimplePing.m */,
+				B2FC536B18ACA77C00E91F2A /* PGPulseView.h */,
+				B2FC536C18ACA77C00E91F2A /* PGPulseView.m */,
+				B21ED4EF18ADAA6300121B2C /* PGConstants.h */,
+				B21ED4F018ADAA6300121B2C /* PGConstants.m */,
 			);
 			path = Ping;
 			sourceTree = "<group>";
@@ -264,10 +274,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2D010BC18AC8520000AACBB /* main.m in Sources */,
+				B21ED4F118ADAA6300121B2C /* PGConstants.m in Sources */,
 				B2D010E118AC8530000AACBB /* PGViewController.m in Sources */,
 				B2D010E518AC86DA000AACBB /* PGNetworkUtility.m in Sources */,
 				B2D010E818AC91DE000AACBB /* SimplePing.m in Sources */,
 				B2D010C018AC8520000AACBB /* PGAppDelegate.m in Sources */,
+				B2FC536D18ACA77C00E91F2A /* PGPulseView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

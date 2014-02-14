@@ -9,24 +9,30 @@
 #import <UIKit/UIKit.h>
 #import "SimplePing.h"
 
-typedef enum {
-    kPingButtonStatePing,
-    kPingButtonStateStop,
-} PGPingButtonState;
-
-
+@class PGPulseView;
 @interface PGViewController : UIViewController <SimplePingDelegate> {
-    PGPingButtonState _buttonState;
     SimplePing *_pinger;
+    BOOL _pingerReady;
+    NSTimeInterval _lastPingTime;
 }
 
+// Label that displays the IP Address
 @property (strong, nonatomic) IBOutlet UILabel *ipLabel;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *ipSegmentControl;
-@property (strong, nonatomic) IBOutlet UIButton *pingButton;
 
-@property (nonatomic) NSUInteger pingsSent;
-@property (nonatomic) NSUInteger pingsReceived;
+// Pulsing View to indicate received pings
+@property (strong, nonatomic) IBOutlet PGPulseView *pulseView;
 
+// Timer to control when to send ICMP ping packets
 @property (strong, nonatomic) NSTimer *pingTimer;
+
+// Ping Statistics
+@property (nonatomic, assign) NSUInteger pingsSent;
+@property (nonatomic, assign) NSUInteger pingsReceived;
+@property (nonatomic, readonly) CGFloat fractionPingsReceived;
+@property (nonatomic, readonly) CGFloat fractionPingsDropped;
+
+-(void)startPings;
+-(void)stopPings;
+
 
 @end

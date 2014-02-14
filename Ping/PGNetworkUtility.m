@@ -5,6 +5,8 @@
 //  Created by Shoumik Palkar on 2/12/14.
 //  Copyright (c) 2014 Shoumik Palkar. All rights reserved.
 //
+//  Much of the below comes from
+//  http://stackoverflow.com/questions/7072989/iphone-ipad-osx-how-to-get-my-ip-address-programmatically
 
 #import "PGNetworkUtility.h"
 
@@ -23,21 +25,13 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
-+(NSString *)getIPAddress:(BOOL)preferIPv4 {
++(NSString *)getIPv4Address {
     
     NSArray *searchArray;
-    if (preferIPv4) {
         searchArray = @[ IOS_WIFI @"/" IP_ADDR_IPv4,
                          IOS_WIFI @"/" IP_ADDR_IPv6,
                          IOS_CELLULAR @"/" IP_ADDR_IPv4,
                          IOS_CELLULAR @"/" IP_ADDR_IPv6 ];
-    }
-    else {
-        searchArray = @[ IOS_WIFI @"/" IP_ADDR_IPv6,
-                         IOS_WIFI @"/" IP_ADDR_IPv4,
-                         IOS_CELLULAR @"/" IP_ADDR_IPv6,
-                         IOS_CELLULAR @"/" IP_ADDR_IPv4 ] ;
-    }
 
     
     NSDictionary *addresses = [PGNetworkUtility _getIPAddresses];
@@ -51,27 +45,10 @@
      }];
     
     if (!address) {
-        if (preferIPv4) {
             return @"0.0.0.0";
-        }
-        else {
-            return @"0:0:0:0:0:0:0:0";
-        }
     }
     
     return address;
-}
-
-+(BOOL)isIPv4Address:(NSString *)address {
-    return ![PGNetworkUtility isIPv6Address:address];
-}
-
-+(BOOL)isIPv6Address:(NSString *)address {
-    if (!address) {
-        return NO;
-    }
-    
-    return [address rangeOfString:@":"].location != NSNotFound;
 }
 
 + (NSDictionary *)_getIPAddresses {

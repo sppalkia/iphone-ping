@@ -10,9 +10,6 @@
 
 @interface PGNetworkUtility : NSObject
 
-+(NSString *)getIPAddress:(BOOL)preferIPv4;
-
-+(BOOL)isIPv4Address:(NSString *)address;
-+(BOOL)isIPv6Address:(NSString *)address;
++(NSString *)getIPv4Address;
 
 @end
