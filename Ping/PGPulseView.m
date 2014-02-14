@@ -12,7 +12,7 @@
 @implementation PGPulseView
 
 -(void)awakeFromNib {
-    self.backgroundColor = [PGConstants redColor];
+    self.backgroundColor = [PGConstants blueColor];
     _isRed = NO;
 }
 
