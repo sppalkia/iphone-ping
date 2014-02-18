@@ -1,3 +1,6 @@
+Ping
+---
+
 This is a simple utility based off Apple's 'SimplePing' that allows one
 to check network connectivity. If the blue square is pulsing, the device
 is receiving a response to IPv4 ping packets. A red square indicates no
